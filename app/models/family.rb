@@ -6,4 +6,6 @@ class Family < ActiveRecord::Base
   has_many :playdates, through: :playdate_family
   has_many :playdate_families
 
+  has_many :credits
+
 end
