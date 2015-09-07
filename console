@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require 'pry'
+require 'sinatra/activerecord'
+Dir["app/models/*.rb"].each do |model|
+  load model
+end
+
+Pry.start
