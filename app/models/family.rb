@@ -8,4 +8,6 @@ class Family < ActiveRecord::Base
 
   has_many :credits
 
+  enum preferred_contact_method: [:phone, :email]
+
 end
