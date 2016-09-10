@@ -4,5 +4,4 @@ class Playdate < ActiveRecord::Base
 
   has_many :playdate_families
   has_many :families, through: :playdate_families
-
 end
