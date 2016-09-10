@@ -1,6 +1,6 @@
 development:
   adapter: postgresql
-  database: development
+  database: coop_development
   username: <%= ENV['PG_USER'] %>
   password: <%= ENV['PG_PASS'] %>
   host: localhost
