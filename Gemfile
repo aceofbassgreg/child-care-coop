@@ -1,9 +1,12 @@
 source 'https://rubygems.org'
 
-gem 'pry'
-gem 'thin'
-gem 'rake'
-gem 'sinatra', require: 'sinatra/base'
 gem "activerecord"
+gem "pg"
+gem "rake"
+gem "sinatra", require: "sinatra/base"
 gem "sinatra-activerecord"
-gem 'pg'
+gem "thin"
+
+group :development do
+  gem "pry"
+end
