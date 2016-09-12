@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150907010926) do
+ActiveRecord::Schema.define(version: 20160910025403) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "addresses", force: :cascade do |t|
+    t.string  "street_address"
+    t.string  "city"
+    t.string  "state"
+    t.integer "zip"
+    t.integer "family_id"
+    t.integer "venue_id"
+  end
 
   create_table "care_requests", force: :cascade do |t|
     t.integer "family_id"
@@ -51,12 +60,9 @@ ActiveRecord::Schema.define(version: 20150907010926) do
     t.integer "family_id"
     t.string  "first_name"
     t.string  "last_name"
-    t.string  "street_address"
-    t.string  "city"
-    t.string  "state"
-    t.string  "zip"
     t.string  "email"
     t.string  "phone"
+    t.integer "address_id"
   end
 
   create_table "playdate_families", force: :cascade do |t|
@@ -67,7 +73,6 @@ ActiveRecord::Schema.define(version: 20150907010926) do
   create_table "playdates", force: :cascade do |t|
     t.date    "date"
     t.time    "time"
-    t.integer "host_family_id"
     t.integer "playgroup_id"
     t.integer "venue_id"
   end
@@ -85,11 +90,8 @@ ActiveRecord::Schema.define(version: 20150907010926) do
 
   create_table "venues", force: :cascade do |t|
     t.string  "name"
-    t.string  "address"
-    t.string  "city"
-    t.string  "state"
-    t.string  "zip"
     t.integer "family_id"
+    t.integer "address_id"
   end
 
 end
