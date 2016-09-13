@@ -1,0 +1,9 @@
+default:
+  family_id:
+  first_name:
+  last_name:
+  birthday:
+  potty_trained:
+  potty_training_notes:
+  allergies:
+  allergy_notes:

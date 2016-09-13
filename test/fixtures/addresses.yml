@@ -1,0 +1,7 @@
+default:
+  street_address:
+  city:
+  state:
+  zip:
+  family_id:
+  venue_id:
