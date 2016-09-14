@@ -1,4 +1,4 @@
 default:
-  name:
-  is_recurring:
-  recurring_date:
+  name: nil
+  is_recurring: nil
+  recurring_date: nil

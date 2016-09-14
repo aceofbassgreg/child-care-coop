@@ -1,7 +1,7 @@
-default:
-  street_address:
-  city:
-  state:
-  zip:
-  family_id:
-  venue_id:
+munster_house:
+  street_address: 1313 Mockingbird Lane
+  city: Mockingbird Heights
+  state: California
+  zip: 90210
+  family_id: munsters
+  venue_id: 

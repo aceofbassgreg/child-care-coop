@@ -1,7 +1,7 @@
-default:
-  family_id:
-  first_name:
-  last_name:
-  email:
-  phone:
-  address_id:
+munster_dad:
+  family: munsters
+  first_name: Herman
+  last_name: Munster
+  email: herm@gmail.com 
+  phone: 666-66-6666
+  address: munster_house

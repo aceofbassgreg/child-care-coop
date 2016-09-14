@@ -1,4 +1,4 @@
 default:
-  name:
-  family_id:
-  address_id:
+  name: nil
+  family_id: nil
+  address_id: nil

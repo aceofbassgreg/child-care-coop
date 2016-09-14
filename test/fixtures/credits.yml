@@ -1,2 +1,5 @@
-default:
-  family_id:
+credit:
+  family: munsters
+
+credit_2:
+  family: munsters

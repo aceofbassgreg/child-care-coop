@@ -1,5 +1,5 @@
-default:
-  name:
-  phone_number:
-  email:
-  preferred_contact_method:
+munsters:
+  name: Munster
+  phone_number: 666-6666
+  email: munster@gmail.com
+  preferred_contact_method: email

@@ -1,9 +1,9 @@
-default:
-  family_id:
-  first_name:
-  last_name:
-  birthday:
-  potty_trained:
-  potty_training_notes:
-  allergies:
-  allergy_notes:
+munster_children:
+  family: munsters
+  first_name: Eddie
+  last_name: Munster
+  birthday: <%= Date.new(1950,05,01)%>
+  potty_trained: true
+  potty_training_notes: nil
+  allergies: nil
+  allergy_notes: nil

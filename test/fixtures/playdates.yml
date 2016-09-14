@@ -1,5 +1,5 @@
 default:
-  date:
-  time:
-  playgroup_id:
-  venue_id:
+  date: nil
+  time: nil
+  playgroup_id: nil
+  venue_id: nil
