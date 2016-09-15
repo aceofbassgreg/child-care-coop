@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160910025403) do
+ActiveRecord::Schema.define(version: 20160915014022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 20160910025403) do
   create_table "care_requests", force: :cascade do |t|
     t.integer "family_id"
     t.integer "requested_hours"
-    t.date    "date"
     t.time    "time"
     t.boolean "is_time_flexible"
     t.integer "flex_hours"

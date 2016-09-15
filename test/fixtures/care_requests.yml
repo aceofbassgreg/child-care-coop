@@ -1,7 +1,6 @@
 date_night:
-  family_id:
-  requested_hours:
-  date:
-  time:
-  is_time_flexible:
-  flex_hours:
+  family: munsters
+  requested_hours: 4
+  time: <%= DateTime.new(2016,12,31,18,00,00) %>
+  is_time_flexible: true
+  flex_hours: 2
