@@ -1,5 +1,5 @@
-configure :production, :development do
-  db = URI.parse(ENV['DATABASE_URL'] || 'postgres://localhost/coop_development')
+configure :production, :development, :test do |env|
+  db = URI.parse(ENV['DATABASE_URL'] || "postgres://localhost/coop_#{env.environment.to_s}")
 
   ActiveRecord::Base.establish_connection(
       :adapter => db.scheme == 'postgres' ? 'postgresql' : db.scheme,
