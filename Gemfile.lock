@@ -31,6 +31,8 @@ GEM
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
+    rack-test (0.6.3)
+      rack (>= 1.0)
     rake (10.4.2)
     sinatra (1.4.6)
       rack (~> 1.4)
@@ -56,10 +58,11 @@ DEPENDENCIES
   activerecord
   pg
   pry
+  rack-test
   rake
   sinatra
   sinatra-activerecord
   thin
 
 BUNDLED WITH
-   1.10.6
+   1.11.2
