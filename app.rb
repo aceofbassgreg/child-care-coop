@@ -46,9 +46,15 @@ get '/venue/:id' do
   Venue.find(params[:id]).to_json
 end
 
-# post '/address' do
-
-# end
+post '/address' do
+  begin
+    address = Address.create!(params[:address])
+    address.to_json
+  rescue
+    {'error': 'Could not create Address'}.to_json
+    raise 
+  end
+end
 
 # post '/care_request' do
 
