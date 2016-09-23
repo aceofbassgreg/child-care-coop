@@ -11,40 +11,40 @@ get '/test' do
 end
 
 get '/address/:id' do
-  Address.find(params[:id])
+  Address.find(params[:id]).to_json
 end
 
-# get '/care_request/:id' do
+get '/care_request/:id' do
+  Venue.find(params[:id]).to_json
+end
 
-# end
+get '/child/:id' do
+  Child.find(params[:id]).to_json
+end
 
-# get '/child/:id' do
+get '/credit/:id' do
+  Credit.find(params[:id]).to_json
+end
 
-# end
+get '/family/:id' do
+  Family.find(params[:id]).to_json
+end
 
-# get '/credit/:id' do
+get '/parent/:id' do
+  Parent.find(params[:id]).to_json
+end
 
-# end
+get '/playdate/:id' do
+  Playdate.find(params[:id]).to_json
+end
 
-# get '/family/:id' do
+get '/playgroup/:id' do
+  Playgroup.find(params[:id]).to_json
+end
 
-# end
-
-# get '/parent/:id' do
-
-# end
-
-# get '/playdate/:id' do
-
-# end
-
-# get '/playgroup/:id' do
-
-# end
-
-# get '/venue/:id' do
-
-# end
+get '/venue/:id' do
+  Venue.find(params[:id]).to_json
+end
 
 # post '/address' do
 
@@ -82,9 +82,9 @@ end
 
 # end
 
-# delete '/address/:id' do
+delete '/address/:id' do
 
-# end
+end
 
 # delete '/care_request/:id' do
 
