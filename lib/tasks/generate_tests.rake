@@ -1,10 +1,7 @@
 require 'rake'
 
-file_names = Dir.entries("./app/models")
-file_names.each do |file_name|
-  if file_name.length > 3
-    require "./app/models/#{file_name}"
-  end
+Dir["./app/models/*.rb"].each do |file|
+  require file
 end
 
 desc "generates tests from model file names"
