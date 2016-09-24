@@ -9,6 +9,7 @@ gem "thin"
 
 group :development do
   gem "pry"
+  gem "faker"
 end
 
 group :test do
