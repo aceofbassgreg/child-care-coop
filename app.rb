@@ -8,22 +8,6 @@ end
 
 ENV['RACK_ENV'] ||= 'development'
 
-def basic_get_response(model_klass)
-  model_klass.find(params[:id]).to_json
-end
-
-def basic_post_response(model_klass)
-  request_body = request.body.read
-  attrs = JSON.parse(request_body)
-  address = model_klass.create!(attrs)
-  address.to_json
-end
-
-def basic_delete_response(model_klass)
-  model_klass.find(params[:id]).destroy!
-  {'status': "#{model_klass} #{:id} has been deleted!"}
-end
-
 get '/test' do
   "Hello world!"
 end
@@ -48,8 +32,8 @@ get '/family/:id' do
   basic_get_response(Family)
 end
 
-get '/parent/:id' do
-  basic_get_response(Parent)
+get '/guardian/:id' do
+  basic_get_response(Guardian)
 end
 
 get '/playdate/:id' do
@@ -84,8 +68,8 @@ post '/family' do
   basic_post_response(Family)
 end
 
-post '/parent' do
-  basic_post_response(Parent)
+post '/guardian' do
+  basic_post_response(Guardian)
 end
 
 post '/playdate' do
@@ -120,8 +104,8 @@ delete '/family/:id' do
   basic_delete_response(Family)
 end
 
-delete '/parent/:id' do
-  basic_delete_response(Parent)
+delete '/guardian/:id' do
+  basic_delete_response(Guardian)
 end
 
 delete '/playdate/:id' do
@@ -135,3 +119,21 @@ end
 delete '/venue/:id' do
   basic_delete_response(Venue)
 end
+
+  private
+
+    def basic_get_response(model_klass)
+      model_klass.find(params[:id]).to_json
+    end
+
+    def basic_post_response(model_klass)
+      request_body = request.body.read
+      attrs = JSON.parse(request_body)
+      address = model_klass.create!(attrs)
+      address.to_json
+    end
+
+    def basic_delete_response(model_klass)
+      model_klass.find(params[:id]).destroy!
+      {'status': "#{model_klass} #{:id} has been deleted!"}
+    end
