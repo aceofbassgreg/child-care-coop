@@ -1,4 +1,4 @@
 class Address < ActiveRecord::Base
-  belongs_to :family
-  belongs_to :venue
+  has_one :family
+  has_one :venue
 end
