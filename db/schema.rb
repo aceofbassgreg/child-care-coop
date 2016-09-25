@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160915014022) do
+ActiveRecord::Schema.define(version: 20160924030204) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,8 +21,6 @@ ActiveRecord::Schema.define(version: 20160915014022) do
     t.string  "city"
     t.string  "state"
     t.integer "zip"
-    t.integer "family_id"
-    t.integer "venue_id"
   end
 
   create_table "care_requests", force: :cascade do |t|
@@ -53,15 +51,17 @@ ActiveRecord::Schema.define(version: 20160915014022) do
     t.string  "phone_number"
     t.string  "email"
     t.integer "preferred_contact_method"
+    t.integer "address_id"
   end
 
-  create_table "parents", force: :cascade do |t|
+  create_table "guardians", force: :cascade do |t|
     t.integer "family_id"
     t.string  "first_name"
     t.string  "last_name"
     t.string  "email"
     t.string  "phone"
     t.integer "address_id"
+    t.string  "relationship_to_child"
   end
 
   create_table "playdate_families", force: :cascade do |t|
