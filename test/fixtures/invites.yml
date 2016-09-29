@@ -1,0 +1,9 @@
+default:
+  email:
+  playdate_family_id:
+  sender_id:
+  recipient_id:
+  accepted:
+  token:
+  created_at:
+  updated_at:
