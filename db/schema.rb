@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160929014554) do
+ActiveRecord::Schema.define(version: 20161001135540) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20160929014554) do
   end
 
   create_table "credits", force: :cascade do |t|
-    t.integer  "family_id"
+    t.integer  "playgroup_family_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -95,13 +95,14 @@ ActiveRecord::Schema.define(version: 20160929014554) do
   end
 
   create_table "playdates", force: :cascade do |t|
-    t.time     "time"
+    t.time     "start_time"
     t.integer  "playgroup_id"
     t.integer  "venue_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "is_recurring"
     t.string   "recurring_interval"
+    t.time     "end_time"
   end
 
   create_table "playgroup_families", force: :cascade do |t|
