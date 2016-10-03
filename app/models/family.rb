@@ -1,7 +1,7 @@
 class Family < ActiveRecord::Base
   belongs_to :address
 
-  has_and_belongs_to_many :playgroups
+  has_many :playgroups, through: :playgroup_family
   
   has_many :care_requests
   has_many :children
