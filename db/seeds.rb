@@ -4,6 +4,7 @@ Dir["./app/models/*.rb"].each do |file|
   require file
 end
 
+#########Create Addresses#########
 50.times do |n|
   street_address = Faker::Address.street_address
   city           = Faker::Address.city
@@ -16,37 +17,34 @@ end
                   zip:            zip)
 end
 
+#########Create Families#########
 50.times do |n|
   phone_number             = Faker::PhoneNumber.phone_number 
   preferred_contact_method = "phone"
   address_id               = n
 
-  Family.create!(phone_number:             phone_number,
+  family = Family.create!(phone_number:    phone_number,
                  preferred_contact_method: preferred_contact_method,
                  address_id:               address_id)
-end
 
-50.times do |n|
-  first_name = Faker::Name.first_name
-  last_name  = Faker::Name.last_name
-  email      = Faker::Internet.email
-  family     = Family.find(n + 1)
-  phone      = family.phone_number
+#########Create Families' Guardians#########
+  guardian_first_name = Faker::Name.first_name
+  guardian_last_name  = Faker::Name.last_name
+  email               = Faker::Internet.email
+  phone               = family.phone_number
   family.guardians.create!(first_name:           first_name,
                          last_name:              last_name,
                          email:                  email,
                          phone:                  phone,
                          relationship_to_child: "parent")
-end
 
-50.times do |n|
-  family        = Family.find(n + 1) 
-  first_name    = Faker::Name.first_name
-  last_name     = family.guardians.first.last_name
-  birthday      = Faker::Date.backward(1200)
-  potty_trained = [true, false].sample
+#########Create Families' Children#########
+  child_first_name     = Faker::Name.first_name
+  child_last_name      = family.guardians.first.last_name
+  birthday             = Faker::Date.backward(1200)
+  potty_trained        = [true, false].sample
   potty_training_notes = nil
-  allergies     = false
+  allergies            = false
   family.children.create!(first_name:           first_name,
                           last_name:            last_name,
                           birthday:             birthday,
@@ -55,6 +53,7 @@ end
                           allergies:            allergies)
 end
 
+#########Create Venues#########
 10.times do |n|
   street_address = Faker::Address.street_address
   city           = Faker::Address.city
@@ -70,5 +69,28 @@ end
   venue = Venue.new(name: "#{name} Brewery")
   address.venue = venue
   venue.save!
+end
+
+#########Create Some Playgroups#########
+playgroup_names = ["Watts Hillandale Tots", 
+                   "Downtown Playgroup", 
+                   "Pershing St. Group",
+                   "Club Kiddies",
+                   "Monuts for Bronuts"]
+family_ids_map  = {
+                    0 => (0..5).to_a,
+                    1 => (4..10).to_a,
+                    2 => (10..11).to_a,
+                    3 => (12..14).to_a,
+                    4 => (50..54).to_a
+                  }
+
+playgroup_names.each_with_index do |name, i|
+  playgroup = Playgroup.create!(name: name)
+  family_ids_map[i].each do |family_id|
+    PlaygroupFamily.create!(family_id: family_id,
+                            playgroup_id: playgroup.id)
+
+  end
 end
 
