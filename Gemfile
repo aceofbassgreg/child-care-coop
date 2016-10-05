@@ -10,6 +10,7 @@ gem "thin"
 group :development do
   gem "pry"
   gem "faker"
+  gem "bundler-audit"
 end
 
 group :test do
