@@ -94,3 +94,28 @@ playgroup_names.each_with_index do |name, i|
   end
 end
 
+#########Create Care Reqeust#########
+
+#Picking first random b/c they have a playgroup
+family = Family.first
+playgroup = family.playgroups.first
+playgroup_id = playgroup.id
+care_request = family.care_requests.create!(
+  requested_start_time: Time.new(2016,12,05,"10:00:00"),
+  requested_end_time: Time.new(2016,12,05,"12:00:00"),
+  is_time_flexible: false,
+  playgroup_id: playgroup_id
+  )
+
+#########Family 'Accepts' Care Request#########
+hosting_family = playgroup.families.last
+care_request.hosting_family_id = hosting_family.id
+care_request.save!
+
+#########Next, host family would create corresponding playdate#########
+
+
+
+
+
+
