@@ -109,13 +109,7 @@ care_request = family.care_requests.create!(
 
 #########Family 'Accepts' Care Request#########
 hosting_family = playgroup.families.last
-care_request.hosting_family_id = hosting_family.id
+care_request.host_family_id = hosting_family.id
 care_request.save!
 
 #########Next, host family would create corresponding playdate#########
-
-
-
-
-
-
