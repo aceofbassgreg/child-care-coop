@@ -1,4 +1,3 @@
-default:
-  name: nil
-  is_recurring: nil
-  recurring_date: nil
+munster_and_friends_playgroup:
+  name: munster_and_friends_playgroup
+

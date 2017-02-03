@@ -1,6 +1,29 @@
-date_night:
-  family: munsters
+new_care_request:
   requested_hours: 4
-  time: <%= DateTime.new(2016,12,31,18,00,00) %>
-  is_time_flexible: true
-  flex_hours: 2
+  requested_start_time: <%= DateTime.new(2016,12,31,18,00,00) %>
+  requested_end_time: <%= DateTime.new(2016,12,31,21,00,00) %>
+  is_time_flexible: false
+  flex_hours: nil
+  requesting_family: munsters
+  cancelled: false
+  completed: false
+  playgroup: munster_and_friends_playgroup 
+  hosting_family: nil
+  accepted_start_time: nil
+  accepted_end_time: nil
+  playdate_id: nil
+
+accepted_care_request:
+  requested_hours: 4
+  requested_start_time: <%= DateTime.new(2016,12,31,18,00,00) %>
+  requested_end_time: <%= DateTime.new(2016,12,31,21,00,00) %>
+  is_time_flexible: false
+  flex_hours: nil
+  requesting_family: munsters
+  cancelled: false
+  completed: false
+  playgroup: munster_and_friends_playgroup 
+  hosting_family: nil
+  accepted_start_time: nil
+  accepted_end_time: nil
+  playdate_id: nil
