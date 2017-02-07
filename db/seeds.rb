@@ -97,19 +97,26 @@ end
 #########Create Care Reqeust#########
 
 #Picking first random b/c they have a playgroup
-family = Family.first
-playgroup = family.playgroups.first
+requesting_family = Family.first
+playgroup = requesting_family.playgroups.first
 playgroup_id = playgroup.id
-care_request = family.care_requests.create!(
-  requested_start_time: Time.new(2016,12,05,"10:00:00"),
-  requested_end_time: Time.new(2016,12,05,"12:00:00"),
+requested_start_time = Time.new(2016,12,05,"10:00:00")
+requested_end_time = Time.new(2016,12,05,"12:00:00")
+care_request = requesting_family.care_requests.create!(
+  requested_start_time: requested_start_time,
+  requested_end_time: requested_end_time,
   is_time_flexible: false,
   playgroup_id: playgroup_id
   )
 
 #########Family 'Accepts' Care Request#########
-hosting_family = playgroup.families.last
-care_request.host_family_id = hosting_family.id
+host_family = playgroup.families.last
+care_request.host_family_id = host_family.id
 care_request.save!
 
 #########Next, host family would create corresponding playdate#########
+host_family.playdates.create!(
+  start_time: requested_start_time,
+  end_time:   requested_end_time,
+  playgroup_id: playgroup_id,
+  venue_id: host_family)
